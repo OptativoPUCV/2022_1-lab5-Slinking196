@@ -60,3 +60,17 @@ ju., 21 de abr. de 2022 11:39:24:
  tests:  11|6
 total_score: 15/70
 aba68f6
+ju., 21 de abr. de 2022 11:49:06: 
+ treemap.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:4:0:
+treemap.c: In function 'insertTreeMap':
+treemap.c:53:30: error: 'return' with a value, in function returning void [-Werror]
+     if (tree == NULL) return NULL;
+                              ^~~~
+treemap.c:51:6: note: declared here
+ void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      ^~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+3373c39
