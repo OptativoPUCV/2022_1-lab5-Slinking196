@@ -14,3 +14,14 @@ ju., 21 de abr. de 2022 11:10:53:
  tests:  4|7
 total_score: 5/70
 2687168
+ju., 21 de abr. de 2022 11:27:52: 
+ treemap.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'searchTreeMap':
+treemap.c:93:16: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+     return tree->current;
+            ~~~~^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+207f9cd
