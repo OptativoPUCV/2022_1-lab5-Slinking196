@@ -79,11 +79,16 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode *aux = tree->root;
 
     while (aux != NULL) {
-        if (strcmp((char *)aux->pair->key, (char *)key) > 0) {
+        if (tree->lower_than(aux->pair->key, key) == 1) {
+            aux = aux->left;
+        }else if (tree->lower_than(key, aux->pair->key) == 1) {
+            aux = aux->right;
+        }else break;
+        /*if (strcmp((char *)aux->pair->key, (char *)key) > 0) {
             aux = aux->right;
         }else if (strcmp((char *)aux->pair->key, (char *)key) < 0) {
             aux = aux->left;
-        }else break;
+        }else break;*/
     }
 
     if (aux == NULL) return NULL;
