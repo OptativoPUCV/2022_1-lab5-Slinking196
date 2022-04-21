@@ -80,11 +80,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
     while (aux != NULL) {
         if (strcmp((char *)aux->pair->key, (char *)key) > 0) {
-            //aux = aux->left;
             aux = aux->right;
         }else if (strcmp((char *)aux->pair->key, (char *)key) < 0) {
             aux = aux->left;
-            //aux = aux->right;
         }else break;
     }
 
