@@ -81,16 +81,17 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     while (aux != NULL) {
         if (strcmp((char *)aux->pair->key, (char *)key) > 0) {
             //aux = aux->left;
-            aux = aux->left;
+            aux = aux->right;
         }else if (strcmp((char *)aux->pair->key, (char *)key) < 0) {
             aux = aux->left;
             //aux = aux->right;
         }else break;
     }
 
-    if (tree->current == NULL) return NULL;
+    //if (aux == NULL) return NULL;
+    //tree->current = aux;
     
-    return tree->current;
+    return aux->pair;
 }
 
 
