@@ -103,6 +103,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         free(node);
     } 
     else {
+        printf("xd");
         TreeNode *min = minimum(node);
         node->pair->key = min->pair->key;
         node->pair->value = min->pair->value;
