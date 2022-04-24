@@ -118,3 +118,6 @@ test.c:6:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 512cd29
+24 Apr 2022 19:00:02: 
+ tests:  0|0
+1d40721
