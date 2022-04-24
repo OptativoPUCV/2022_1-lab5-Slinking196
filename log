@@ -121,3 +121,9 @@ Compilation failed
 24 Apr 2022 19:00:02: 
  tests:  0|0
 1d40721
+24 Apr 2022 19:03:50: 
+ treemap.c | 4 ----
+ 1 file changed, 4 deletions(-)
+ tests:  16|4
+total_score: 30/70
+6021573
