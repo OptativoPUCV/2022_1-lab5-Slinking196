@@ -127,3 +127,27 @@ Compilation failed
  tests:  16|4
 total_score: 30/70
 6021573
+24 Apr 2022 19:06:33: 
+ treemap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:4:
+treemap.c: In function 'removeNode':
+treemap.c:88:12: error: suggest explicit braces to avoid ambiguous 'else' [-Werror=dangling-else]
+   88 |         if (node->left == NULL)
+      |            ^
+test.c:503:5: error: 'main' is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: 'main' defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:6:8: error: '_strdup2' defined but not used [-Werror=unused-function]
+    6 | char * _strdup2(const char * str) {
+      |        ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+55ab814
