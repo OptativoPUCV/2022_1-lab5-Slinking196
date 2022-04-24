@@ -152,8 +152,9 @@ Pair * firstTreeMap(TreeMap * tree) {
     if (tree == NULL) return NULL;
     
     TreeNode *aux = tree->current;
-    if (aux == NULL) return NULL; 
-
+    if (aux == NULL) return NULL;
+    aux = minimum(aux);
+    return aux->pair;
     
 }
 
