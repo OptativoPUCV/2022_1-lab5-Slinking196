@@ -103,7 +103,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         free(node);
     } 
     else {
-        printf("xd\n");
         TreeNode *min = minimum(node->right);
         node->pair->key = min->pair->key;
         node->pair->value = min->pair->value;
@@ -119,9 +118,6 @@ void eraseTreeMap(TreeMap * tree, void* key){
     removeNode(tree, node);
 
 }
-
-
-
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     if (tree == NULL) return NULL;
@@ -153,7 +149,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    tree->current = minimum(tree->current);
+    return tree->current->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
