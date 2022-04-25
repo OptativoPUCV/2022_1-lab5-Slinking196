@@ -166,7 +166,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL)
     {
-        //printf("Tiene R\n");
+        printf("Tiene R\n");
         tree->current = minimum(tree->current->right);
     }
     else
