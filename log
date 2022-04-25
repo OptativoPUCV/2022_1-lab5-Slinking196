@@ -683,3 +683,14 @@ Compilation failed
  tests:  29|0
 total_score: 70/70
 8feb226
+24 Apr 2022 23:51:54: 
+ treemap.c | 65 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 62 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function 'removeNode':
+treemap.c:77:15: error: unused variable 'parentNode' [-Werror=unused-variable]
+   77 |     TreeNode *parentNode = node->parent;
+      |               ^~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+1dfc5d8
