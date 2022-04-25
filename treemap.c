@@ -155,16 +155,20 @@ Pair * firstTreeMap(TreeMap * tree) {
     return tree->current->pair;
 }
 
+
 Pair * nextTreeMap(TreeMap * tree) {
     if (tree == NULL) return NULL;
     TreeNode *aux = tree->current;
     TreeNode *parentNode = aux->parent;
     
-    if (tree->lower_than(aux->pair->key, parentNode->pair->key) == 1) {
-        tree->current = minimum(parentNode->right);
-    }
+    if (aux->right != NULL) {
+        tree->current = minimum(aux->right);
+    } 
     else {
-        tree->current = parentNode->parent;
+        while(tree->lower_than(parentNode->pair->key, aux->pair->key) == 1) {
+            parentNode = parentNode->parent;
+        }
+        tree->current = parentNode;
     }
     return tree->current->pair;
 }
