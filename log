@@ -573,3 +573,14 @@ d232da9
  1 file changed, 6 insertions(+), 2 deletions(-)
  tests:  0|0
 69f664e
+24 Apr 2022 22:29:20: 
+ treemap.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function 'upperBound':
+treemap.c:161:1: error: control reaches end of non-void function [-Werror=return-type]
+  161 | }
+      | ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+c834164
