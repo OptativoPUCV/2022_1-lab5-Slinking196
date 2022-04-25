@@ -319,3 +319,17 @@ a334ee6
  tests:  23|2
 total_score: 50/70
 51394c8
+24 Apr 2022 21:28:36: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c: In function 'nextTreeMap':
+treemap.c:171:32: error: format '%d' expects argument of type 'int', but argument 2 has type 'int *' [-Werror=format=]
+  171 |                 printf("key = %d\n", (int *)parentNode->pair->key);
+      |                               ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                |     |
+      |                                int   int *
+      |                               %n
+cc1.exe: all warnings being treated as errors
+Compilation failed
+ef6e627
