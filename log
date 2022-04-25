@@ -363,3 +363,13 @@ total_score: 50/70
  tests:  23|2
 total_score: 50/70
 a780c14
+24 Apr 2022 21:42:02: 
+ treemap.c | 150 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 146 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+treemap.c: In function 'nextTreeMap':
+treemap.c:319:9: error: expected expression before '}' token
+  319 |         }
+      |         ^
+Compilation failed
+7e083b9
