@@ -313,3 +313,9 @@ c2033d5
  tests:  22|2
 total_score: 50/70
 a334ee6
+24 Apr 2022 21:27:04: 
+ treemap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+ tests:  23|2
+total_score: 50/70
+51394c8
