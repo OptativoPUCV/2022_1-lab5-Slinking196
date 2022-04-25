@@ -168,12 +168,13 @@ Pair * nextTreeMap(TreeMap * tree) {
         while(parentNode->parent != NULL) {
             if (tree->lower_than(parentNode->pair->key, aux->pair->key) == 1) {
                 parentNode = parentNode->parent;
-                printf("key = %d\n", *(int *)parentNode->pair->key);
+                
             }
             else {
                 break;
             }
         }
+        printf("key = %d\n", *(int *)parentNode->pair->key);
         tree->current = parentNode;
     }
     return tree->current->pair;
