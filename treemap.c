@@ -147,8 +147,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode *ub_node;
 
     if (searchTreeMap(tree, key) == NULL) {
+        nextTreeMap(ub_node);
         ub_node = tree->current;
-        ub_node = nextTreeMap(ub_node);
     } else ub_node = tree->current;
     
     return ub_node->pair;
