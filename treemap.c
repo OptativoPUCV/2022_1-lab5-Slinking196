@@ -75,36 +75,44 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parentNode = node->parent;
-    if (node->left == NULL && node->right == NULL) {
-        if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
-            parentNode->right = NULL; 
-        }else if (tree->lower_than(node->pair->key, parentNode->pair->key) == 1) {
-            parentNode->left = NULL; 
-        }
-    }else if ((node->left != NULL && node->right == NULL) || (node->left == NULL && node->right != NULL)) {
-        if (node->left == NULL) {
+
+    if (parentNode != NULL) {
+        if (node->left == NULL && node->right == NULL) {
             if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
-                parentNode->right = node->right; 
+                parentNode->right = NULL; 
             }else if (tree->lower_than(node->pair->key, parentNode->pair->key) == 1) {
-                parentNode->left = node->right; 
+                parentNode->left = NULL; 
             }
-            node->right->parent = parentNode; 
-        }
-        if(node->right == NULL) {
-            if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
-                parentNode->right = node->left; 
-            }else if (tree->lower_than(node->pair->key, parentNode->pair->key) == 1) {
-                parentNode->left = node->left;
+        }else if ((node->left != NULL && node->right == NULL) || (node->left == NULL && node->right != NULL)) {
+            if (node->left == NULL) {
+                if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
+                    parentNode->right = node->right; 
+                }else if (tree->lower_than(node->pair->key, parentNode->pair->key) == 1) {
+                    parentNode->left = node->right; 
+                }
+                node->right->parent = parentNode; 
             }
-            node->left->parent = parentNode;
+            if(node->right == NULL) {
+                if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
+                    parentNode->right = node->left; 
+                }else if (tree->lower_than(node->pair->key, parentNode->pair->key) == 1) {
+                    parentNode->left = node->left;
+                }
+                node->left->parent = parentNode;
+            }
+            free(node);
+        } 
+        else {
+            TreeNode *min = minimum(node->right);
+            node->pair->key = min->pair->key;
+            node->pair->value = min->pair->value;
+            removeNode(tree, min);
         }
-        free(node);
-    } 
+    }
     else {
-        TreeNode *min = minimum(node->right);
-        node->pair->key = min->pair->key;
-        node->pair->value = min->pair->value;
-        removeNode(tree, min);
+        node->left->parent = NULL;
+        node->right->parent = NULL;
+        free(node);
     }
 }
 
@@ -164,49 +172,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if(tree->current->right != NULL)
-    {
-        printf("Tiene R\n");
-        tree->current = minimum(tree->current->right);
-    }
-    else
-    {
-        //printf("No tiene R\n");
-        if(tree->current->parent != NULL)
-        {
-            TreeNode * aux = tree->current->parent;
-
-            while(1)
-            {
-                //printf("O");
-                if(aux != NULL)
-                {
-                    //printf("\nTiene padre\n");
-                    if(tree->lower_than(tree->current->pair->key, aux->pair->key) == 1)
-                    {
-                        break;
-                    }
-                    //printf("Current > aux\n");
-                    aux = aux->parent;
-                }
-                else
-                {
-                    //printf("\nNo tiene padre\n");
-                    printf("xd\n");
-                    return NULL;
-                }
-            }
-            tree->current = aux;
-            }
-        else
-        {
-            printf("xd2");
-            return NULL;
-        }
-    }
-    printf("xd3");
-    return tree->current->pair;
-    /*if (tree == NULL) return NULL;
+    if (tree == NULL) return NULL;
     TreeNode *aux = tree->current;
     TreeNode *parentNode = aux->parent;
     
@@ -225,5 +191,5 @@ Pair * nextTreeMap(TreeMap * tree) {
         if (parentNode == NULL) return NULL;
         tree->current = parentNode;
     }
-    return tree->current->pair;*/
+    return tree->current->pair;
 }
