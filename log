@@ -494,3 +494,25 @@ total_score: 60/70
  tests:  25|1
 total_score: 60/70
 a37fbdc
+24 Apr 2022 22:16:10: 
+ treemap.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function 'upperBound':
+treemap.c:151:31: error: passing argument 1 of 'nextTreeMap' from incompatible pointer type [-Werror=incompatible-pointer-types]
+  151 |         ub_node = nextTreeMap(ub_node);
+      |                               ^~~~~~~
+      |                               |
+      |                               TreeNode *
+In file included from treemap.c:4,
+                 from test.c:4:
+treemap.h:23:30: note: expected 'TreeMap *' but argument is of type 'TreeNode *'
+   23 | Pair * nextTreeMap(TreeMap * tree);
+      |                    ~~~~~~~~~~^~~~
+In file included from test.c:4:
+treemap.c:151:17: error: assignment to 'TreeNode *' from incompatible pointer type 'Pair *' [-Werror=incompatible-pointer-types]
+  151 |         ub_node = nextTreeMap(ub_node);
+      |                 ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+61d2f59
