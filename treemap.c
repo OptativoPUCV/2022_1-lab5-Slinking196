@@ -74,7 +74,7 @@ TreeNode * minimum(TreeNode * x){
 }
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-    TreeNode *parentNode = node->parent;
+    //TreeNode *parentNode = node->parent;
 
     if(tree->lower_than(node->pair->key, node->parent->pair->key) == 1)
     {
