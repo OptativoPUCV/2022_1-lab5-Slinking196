@@ -147,8 +147,12 @@ Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode *ub_node;
 
     if (searchTreeMap(tree, key) == NULL) {
-        printf("xd\n");
-        ub_node = tree->current;
+        firstTreeMap(tree);
+        while (nextTreeMap(tree) != NULL) {
+            if (tree->lower_than(tree->current->pair->key, key) == 1) {
+                break;
+            }
+        }
     } else ub_node = tree->current;
     
     return ub_node->pair;
