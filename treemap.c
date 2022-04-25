@@ -166,7 +166,8 @@ Pair * nextTreeMap(TreeMap * tree) {
     } 
     else {
         while(parentNode->parent != NULL) {
-            if (tree->lower_than(parentNode->pair->key, aux->pair->key) == 0) {
+            printf("key = %d\n", *(int *)parentNode->pair->key);
+            if (tree->lower_than(parentNode->pair->key, aux->pair->key) == 1) {
                 parentNode = parentNode->parent;
                 
             }
@@ -174,7 +175,6 @@ Pair * nextTreeMap(TreeMap * tree) {
                 break;
             }
         }
-        printf("key = %d\n", *(int *)parentNode->pair->key);
         tree->current = parentNode;
     }
     return tree->current->pair;
