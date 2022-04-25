@@ -85,11 +85,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         node->pair->key = aux->pair->key;
         node->pair->value = aux->pair->value;
         removeNode(tree, aux);
-    }
-
-    printf("xd");
-    if(tree->lower_than(node->pair->key, parentNode->pair->key) == 1)
-    {
+    }else if(tree->lower_than(node->pair->key, parentNode->pair->key) == 1) {
         // Solo tiene hijo izquierdo
         if(node->left != NULL && node->right == NULL)
         {
