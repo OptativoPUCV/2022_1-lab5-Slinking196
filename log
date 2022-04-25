@@ -333,3 +333,9 @@ treemap.c:171:32: error: format '%d' expects argument of type 'int', but argumen
 cc1.exe: all warnings being treated as errors
 Compilation failed
 ef6e627
+24 Apr 2022 21:29:14: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  23|2
+total_score: 50/70
+6463c51
