@@ -257,3 +257,9 @@ treemap.c:163:16: error: returning 'TreeNode *' from a function with incompatibl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7d557aa
+24 Apr 2022 20:01:56: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  20|2
+total_score: 45/70
+65d6e92
