@@ -668,3 +668,12 @@ total_score: 70/70
  tests:  28|1
 total_score: 65/70
 a6dedca
+24 Apr 2022 23:48:12: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c:117:1: error: expected identifier or '(' before '}' token
+  117 | }
+      | ^
+Compilation failed
+371d6f8
