@@ -78,6 +78,33 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
     if(tree->lower_than(parentNode->pair->key, node->pair->key) == 1)
     {
+        if(node->left != NULL && node->right == NULL)
+        {
+            node->parent->right = node->left;
+            node->left->parent = node->parent;
+        }
+        else if(node->left == NULL && node->right != NULL )
+        {
+            node->parent->right = node->right;
+            node->right->parent = node->parent;
+        }
+            
+        else if(node->left != NULL && node->right != NULL)
+        {
+            TreeNode * aux = node->left;
+
+            aux = minimum(node->right);
+            node->pair->key = aux->pair->key;
+            node->pair->value = aux->pair->value;
+            removeNode(tree, aux);
+        }
+        else
+        {
+            node->parent->right = NULL;
+        }
+    }
+    else
+    {
         // Solo tiene hijo izquierdo
         if(node->left != NULL && node->right == NULL)
         {
@@ -102,33 +129,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         else
         {
             node->parent->left = NULL;
-        }
-    }
-    else
-    {
-        if(node->left != NULL && node->right == NULL)
-        {
-            node->parent->right = node->left;
-            node->left->parent = node->parent;
-        }
-        else if(node->left == NULL && node->right != NULL )
-        {
-            node->parent->right = node->right;
-            node->right->parent = node->parent;
-        }
-            
-        else if(node->left != NULL && node->right != NULL)
-        {
-            TreeNode * aux = node->left;
-
-            aux = minimum(node->right);
-            node->pair->key = aux->pair->key;
-            node->pair->value = aux->pair->value;
-            removeNode(tree, aux);
-        }
-        else
-        {
-            node->parent->right = NULL;
         }
     }
 
