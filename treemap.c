@@ -150,10 +150,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
         firstTreeMap(tree);
         while (nextTreeMap(tree) != NULL) {
             if (tree->lower_than(tree->current->pair->key, key) == 0) {
-                ub_node = tree->current;
                 break;
             }
         }
+        ub_node = tree->current;
     } else ub_node = tree->current;
     
     if(ub_node == NULL) return NULL;
