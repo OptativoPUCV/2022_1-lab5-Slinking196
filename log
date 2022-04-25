@@ -373,3 +373,9 @@ treemap.c:319:9: error: expected expression before '}' token
       |         ^
 Compilation failed
 7e083b9
+24 Apr 2022 21:42:45: 
+ treemap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+ tests:  19|3
+total_score: 40/70
+d04b65f

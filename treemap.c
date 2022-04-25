@@ -299,7 +299,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if (tree == NULL) return NULL;
+    /*if (tree == NULL) return NULL;
     TreeNode *aux = tree->current;
     TreeNode *parentNode = aux->parent;
     
@@ -315,9 +315,10 @@ Pair * nextTreeMap(TreeMap * tree) {
             }
             else if(tree->lower_than(parentNode->pair->key, aux->pair->key) == 0) {
                 break;
-            } else
+            } else {
         }
         tree->current = parentNode;
     }
-    return tree->current->pair;
+    return tree->current->pair;*/
+    return NULL;
 }
