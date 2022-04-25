@@ -76,7 +76,7 @@ TreeNode * minimum(TreeNode * x){
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parentNode = node->parent;
 
-    if(tree->lower_than(node->pair->key, parentNode->pair->key) == 1)
+    if(tree->lower_than(parentNode->pair->key, node->pair->key) == 1)
     {
         // Solo tiene hijo izquierdo
         if(node->left != NULL && node->right == NULL)
