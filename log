@@ -482,3 +482,9 @@ Compilation failed
  tests:  23|2
 total_score: 50/70
 9d23071
+24 Apr 2022 22:11:47: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  25|1
+total_score: 60/70
+03476db

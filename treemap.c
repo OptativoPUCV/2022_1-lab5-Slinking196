@@ -164,16 +164,16 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = minimum(aux->right);
     } 
     else if(aux->right == NULL){
-        while(parentNode->parent != NULL) {
+        while(parentNode != NULL) {
             printf("key = %d\n", *(int *)parentNode->pair->key);
             if (tree->lower_than(parentNode->pair->key, aux->pair->key) == 1) {
                 parentNode = parentNode->parent;
                 
             }
-            else if(tree->lower_than(parentNode->pair->key, aux->pair->key) == 0) {
+            else 
                 break;
-            }
         }
+        if (parentNode == NULL) return NULL;
         tree->current = parentNode;
     }
     return tree->current->pair;
