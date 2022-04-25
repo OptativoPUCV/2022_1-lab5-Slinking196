@@ -172,6 +172,7 @@ Pair * nextTreeMap(TreeMap * tree) {
             }
             else if(tree->lower_than(parentNode->pair->key, aux->pair->key) == 0) {
                 break;
+            }
         }
         tree->current = parentNode;
     }
