@@ -214,6 +214,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             node->right->parent = NULL;
             node->right = NULL;
         }
+        free(node);
     }
 
 }
