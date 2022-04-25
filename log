@@ -275,3 +275,9 @@ bef0f53
  tests:  20|2
 total_score: 45/70
 095b435
+24 Apr 2022 20:57:05: 
+ treemap.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+ tests:  20|2
+total_score: 45/70
+78f25b1
