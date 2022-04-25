@@ -160,7 +160,8 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *aux = tree->current;
 
     if (aux->left == NULL && aux->right) {
-        return minimum(aux->parent->right)->pair;
+        tree->current = minimum(aux->parent->right);
+        return tree->current->pair;
     }
     return NULL;
 }
