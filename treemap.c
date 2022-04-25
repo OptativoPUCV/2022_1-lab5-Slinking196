@@ -150,13 +150,17 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
 Pair * firstTreeMap(TreeMap * tree) {
     if (tree == NULL) return NULL;
-
     TreeNode *aux = tree->root;
     tree->current = minimum(aux);
-
     return tree->current->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+    if (tree == NULL) return NULL;
+    TreeNode *aux = tree->current;
+
+    if (aux->left == NULL && aux->right) {
+        return minimum(aux->parent->right);
+    }
     return NULL;
 }
