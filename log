@@ -608,3 +608,9 @@ total_score: 65/70
  tests:  28|1
 total_score: 65/70
 d20ef1b
+24 Apr 2022 22:39:40: 
+ treemap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+ tests:  29|0
+total_score: 70/70
+dd93b6a

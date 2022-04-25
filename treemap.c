@@ -145,19 +145,20 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode *ub_node;
+    Pair *flag;
 
     if (searchTreeMap(tree, key) == NULL) {
         firstTreeMap(tree);
-        while (nextTreeMap(tree) != NULL) {
-            printf("%d\n", *(int *)tree->current->pair->key);
+        while ((flag = nextTreeMap(tree)) != NULL) {
             if (tree->lower_than(tree->current->pair->key, key) == 0) {
                 break;
             }
         }
+
+        if(flag == NULL) return NULL;
         ub_node = tree->current;
     } else ub_node = tree->current;
     
-    printf("%d\n", *(int *)tree->current->pair->key);
     if(ub_node == NULL) return NULL;
     return ub_node->pair;
 }
