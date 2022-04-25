@@ -626,3 +626,9 @@ d2cdcfd
  tests:  29|0
 total_score: 70/70
 00d3b11
+24 Apr 2022 23:15:53: 
+ treemap.c | 43 +++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 41 insertions(+), 2 deletions(-)
+ tests:  25|2
+total_score: 55/70
+9ddaa4e

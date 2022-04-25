@@ -164,7 +164,46 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if (tree == NULL) return NULL;
+    if(tree->current->right != NULL)
+    {
+        printf("Tiene R\n");
+        tree->current = minimum(tree->current->right);
+    }
+    else
+    {
+        printf("No tiene R\n");
+        if(tree->current->parent != NULL)
+        {
+            TreeNode * aux = tree->current->parent;
+
+            while(1)
+            {
+                printf("O");
+                if(aux->parent != NULL)
+                {
+                    printf("\nTiene padre\n");
+                    if(tree->lower_than(tree->current->pair->key, aux->pair->key) == 1)
+                    {
+                        break;
+                    }
+                    printf("Current > aux\n");
+                    aux = aux->parent;
+                }
+                else
+                {
+                    printf("\nNo tiene padre\n");
+                    return NULL;
+                }
+            }
+            tree->current = aux;
+            }
+        else
+        {
+            return NULL;
+        }
+    }
+    return tree->current->pair;
+    /*if (tree == NULL) return NULL;
     TreeNode *aux = tree->current;
     TreeNode *parentNode = aux->parent;
     
@@ -183,5 +222,5 @@ Pair * nextTreeMap(TreeMap * tree) {
         if (parentNode == NULL) return NULL;
         tree->current = parentNode;
     }
-    return tree->current->pair;
+    return tree->current->pair;*/
 }
